@@ -4,7 +4,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import App from './App';
 
 const domain = 'studyplanner.eu.auth0.com';
-const clientId = 'AchlRXK4bJq1e9ZVnPbKBdfRu07bYCw9';
+const clientId = ' ';
 
 // Create the root element
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Auth0Provider
   domain="studyplanner.eu.auth0.com"
-  clientId="AchlRXK4bJq1e9ZVnPbKBdfRu07bYCw9"
+  clientId=" "
   authorizationParams={{
     redirect_uri: window.location.origin + '/callback',
     audience: 'https://studyplanner.eu.auth0.com/api/v2/', // Add if using APIs
