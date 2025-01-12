@@ -1,0 +1,70 @@
+# services:
+#   backend:
+#     build:
+#       context: ./backend  # This points to your backend folder
+#     ports:
+#       - "8000:8000"
+#     volumes:
+#       - ./backend:/app  # Sync backend code for development
+#     command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+#     working_dir: /app/authentication-service  # Set the working directory to 'authentication-service'
+
+#   frontend:
+#     build:
+#       context: ./study-planner-frontend
+#       dockerfile: Dockerfile
+#     ports:
+#       - "3000:3000"
+#     depends_on:
+#       - backend
+#     volumes:
+#       - ./study-planner-frontend:/app
+
+#   firestore:
+#     image: google/cloud-sdk:emulators
+#     container_name: firestore
+#     command: ["gcloud", "beta", "emulators", "firestore", "start", "--host-port=0.0.0.0:8080"]
+#     ports:
+#       - "8080:8080"
+#     volumes:
+#       - firestore-data:/firestore-data
+
+# volumes:
+#   firestore-data:
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend  # This points to your backend folder
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app  # Sync backend code for development
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/config/task-service-2a607-firebase-adminsdk.json
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+    working_dir: /app  # Use the root of your backend app directory
+
+  frontend:
+    build:
+      context: ./study-planner-frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    volumes:
+      - ./study-planner-frontend:/app
+
+  firestore:
+    image: google/cloud-sdk:emulators
+    container_name: firestore
+    command: ["gcloud", "beta", "emulators", "firestore", "start", "--host-port=0.0.0.0:8080"]
+    ports:
+      - "8080:8080"
+    volumes:
+      - firestore-data:/firestore-data
+
+volumes:
+  firestore-data:

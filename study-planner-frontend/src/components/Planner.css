@@ -1,0 +1,89 @@
+/* Main container */
+.planner {
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    border-radius: 10px;
+  }
+  
+  .header {
+    color: #283593;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table styling */
+  .table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+  }
+  
+  .MuiTableCell-root {
+    color: #3f51b5;
+    font-weight: bold;
+  }
+  
+  .MuiTableHead-root {
+    background-color: #1976d2;
+  }
+  
+  .MuiTableCell-head {
+    background-color: #1976d2;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .MuiTableCell-body {
+    background-color: #f1f8e9;
+  }
+  
+  .MuiInputBase-root {
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+  
+  /* Notes container */
+  .notes-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .note-section {
+    width: 32%;
+    background-color: #e3f2fd;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .note-title {
+    color: #1e88e5;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Button actions */
+  .actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .MuiButton-contained {
+    background-color: #00bcd4;
+    color: white;
+  }
+  
+  .MuiButton-outlined {
+    color: #00bcd4;
+    border-color: #00bcd4;
+  }
+  
+  .MuiButton-outlined:hover {
+    background-color: rgba(0, 188, 212, 0.1);
+  }
+  

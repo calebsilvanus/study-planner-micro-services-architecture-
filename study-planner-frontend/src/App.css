@@ -1,0 +1,11 @@
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2rem;
+}
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+}
